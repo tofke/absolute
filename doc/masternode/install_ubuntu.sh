@@ -115,11 +115,12 @@ echo "Step 1 : Updating packages"
 {
 	echo "Step 4 : Installing Sentinel watch dog"
 	
-	if [ ! -d "$HOME/.absolutecore/sentinel" ]; then
+	if [ ! -d "$root_path/.absolutecore/sentinel" ]; then
+		cd $root_path/.absolutecore &&
 		git clone https://github.com/absolute-community/sentinel.git --q
 	fi
 	
-	cd /root/.absolutecore/sentinel &&
+	cd $root_path/.absolutecore/sentinel &&
 	virtualenv ./venv &&
 	./venv/bin/pip install -r requirements.txt
 
