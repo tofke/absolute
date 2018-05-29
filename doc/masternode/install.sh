@@ -17,12 +17,15 @@ chmod 777 autogen.sh
 ./configure
 chmod +x share/genbuild.sh
 sudo make
-sudo make install
 cd $HOME
 mkdir $HOME/Absolute
 mkdir $HOME/.absolutecore
 cp $HOME/tempABS/src/absoluted $HOME/Absolute
 cp $HOME/tempABS/src/absolute-cli $HOME/Absolute
+
+ln -s $HOME/Absolute/absolute-cli /usr/local/bin/absolute-cli
+ln -s $HOME/Absolute/absoluted /usr/local/bin/absoluted
+
 chmod -R 777 $HOME/Absolute
 chmod -R 777 $HOME/.absolutecore
 sudo apt-get install -y pwgen
