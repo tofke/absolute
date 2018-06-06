@@ -33,11 +33,14 @@ printf  "\n\n******* Starting Absolute-Community Masternode installation *******
 printf " working directory is $(pwd)\n"
 {
 echo "Step 1 : Updating packages"
+	sudo add-apt-repository ppa:bitcoin/bitcoin -y -qq
 	sudo apt-get update -y -qq
 	sudo apt-get upgrade -y -qq
 	sudo apt-get dist-upgrade -y -qq
 	sudo apt-get install nano htop -y -qq
-	sudo apt-get install pwgen  -y -qq
+	sudo apt-get install pwgen  -y -qq	
+	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y -qq
+	sudo apt-get install libevent-pthreads-2.0-5 -y -qq
 	
 	printf "Detect python version "
 	p_version="$(python -V)"
