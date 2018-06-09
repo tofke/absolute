@@ -2395,10 +2395,7 @@ void CWallet::AvailableCoins(vector<COutput>& vCoins, bool fOnlyConfirmed, const
                     found = true;
                 }
                 if(!found) continue;
-                // Do not add locked coins
-		        if(IsLockedCoin((*it).first, i))
-			        continue;
-                
+
                 isminetype mine = IsMine(pcoin->vout[i]);
                 if (!(IsSpent(wtxid, i)) && mine != ISMINE_NO &&
                     (!IsLockedCoin((*it).first, i) || nCoinType == ONLY_1000) &&
