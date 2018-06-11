@@ -16,10 +16,9 @@ depending on your environment:
 After installing the needed dependencies,
 use the autogen script to prepare the build environment.
 
-	chmod 777 autogen.sh
+    chmod -c u+x autogen.sh share/genbuild.sh src/leveldb/build_detect_platform
     ./autogen.sh
     ./configure
-	chmod 777 share/genbuild.sh
     make
 
 Precompiled binaries are available at github, see
